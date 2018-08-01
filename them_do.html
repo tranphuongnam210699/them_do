@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>oder</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="CSS/order.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<section class="hero">
+		<header>
+			<div class="wrapper">
+				<a href="#" class="hamburger"></a>
+				<nav>
+					<ul>
+						<li><a href="#">Buy</a></li>
+						<li><a href="#">Rent</a></li>
+						<li><a href="#">Sell</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+					<a href="#" class="login_btn">Login</a>
+				</nav>
+			</div>
+		</header>
+
+	<div class="container">
+		<div>MÓN ĐÃ ODER</div>
+		<table cellpadding="50px" class="table table-bordered">
+			<tr>
+				<td class="bang1">MÓN</td>
+				<td class="bang1">SỐ LƯỢNG</td>
+				<td class="bang1 text-uppercase">Đơn Giá</td>
+				<td class="bang1">TỔNG TIỀN</td>
+			</tr>
+			<tr height="100px">
+				<td id="mon"></td>
+				<td id="sl"></td>
+				<td id="gia"></td>
+				<td id="tongtien"></td>
+			</tr>
+		</table>
+		<div class="row">
+			<div class="col-sm-offset-4 col-sm-4">
+				<table class="table table-bordered">
+					<tr>
+						<td id="monan" width="100px">Gà</td>
+						<td id="dongia" width="100px">115</td>
+						<button type="button" class="addga" onclick="themmon()">ADD</button>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script>
+		function themmon(){
+			if($('#sl').text() == null || $('#sl').text() == ""){
+				var mon_an =$('#monan').text();
+	            var don_gia = $('#dongia').text();
+	            var so_luong = 1;
+
+	            $("#mon").html(mon_an);
+	            $("#sl").html(so_luong);
+	            $("#gia").html(don_gia);
+	            $("#tongtien").html(so_luong * don_gia);
+			}else{
+				var mon_an =$('#monan').text();
+	            var don_gia = $('#dongia').text();
+	            var so_luong = $('#sl').text();
+				so_luong++;//increase a unit
+
+	            $("#mon").html(mon_an);
+	            $("#sl").html(so_luong);
+	            $("#gia").html(don_gia);
+	            $("#tongtien").html(so_luong * don_gia);
+			}
+		}
+
+	</script>
+</body>
+</html>
